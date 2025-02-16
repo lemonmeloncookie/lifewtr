@@ -7,7 +7,6 @@ on:
       - reopened
       - ready_for_review
       - review_requested
-      - labeled
     branches:
       - main
   pull_request_review:
