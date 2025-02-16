@@ -30,3 +30,5 @@ jobs:
           usernames: ${{ secrets.USERNAMES }}
           webhook_url: ${{ secrets.WEBHOOK_URL }}
           remind_prs_min_age: 0
+          template_ready_for_review_assigned: >-
+            🎉 {mention} 님이 [{prTitle} #{prNumber} (ready for review)]({prURL}) PR 리뷰어로 선정되었습니다!
