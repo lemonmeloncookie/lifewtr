@@ -1,0 +1,33 @@
+name: Random Reviewer Discord
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - ready_for_review
+      - review_requested
+      - labeled
+    branches:
+      - main
+  pull_request_review:
+    types:
+      - submitted
+  schedule:
+    - cron: 0 10 * * 6
+
+permissions:
+  pull-requests: write
+
+jobs:
+  assign-reviewer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign random reviewer
+        uses: JedBeom/random-reviewer-discord@v0.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          usernames: ${{ secrets.USERNAMES }}
+          webhook_url: ${{ secrets.WEBHOOK_URL }}
+          remind_prs_min_age: 0
