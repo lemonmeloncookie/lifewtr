@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Assign random reviewer
-        uses: JedBeom/random-reviewer-discord@feature/workflow_dispatch/new
+        uses: JedBeom/random-reviewer-discord@feature/templates/refined_defaults
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
