@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Assign random reviewer
-        uses: JedBeom/random-reviewer-discord@feature/templates/refined_defaults
+        uses: JedBeom/random-reviewer-discord@fix/no-self-notification
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
